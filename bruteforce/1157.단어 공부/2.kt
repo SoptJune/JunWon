@@ -5,6 +5,7 @@ import java.io.OutputStreamWriter
 
 // O(N)
 // 뭔가 좀 더 간결화할 수 있을 것 같긴 한데...
+// 잔 이 문제가 구현문재라고
 val br = BufferedReader(InputStreamReader(System.`in`))
 val bw = BufferedWriter(OutputStreamWriter(System.out))
 
