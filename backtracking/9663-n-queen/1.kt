@@ -27,16 +27,18 @@ private fun searchQueen(y: Int) {
     for (x in 0 until n) {
         if (isPossible(x, y)) {
             graph[y] = x
-            searchQueen(y + 1)
+            searchQueen(y + 1) // 다음 y축에서 퀸 찾기 
             graph[y] = 0
         }
     }
 }
 
 /**
- * 현재 좌표 (x,y)에 queen을 놓을 수 있는가??
+ *  퀸을 해당 좌표에 놓을 수 있는지 판별하는 함수
+ *  즉, 이전 퀸들과 서로 공격이 가능한지 확인하는 함수다.
  * */
 private fun isPossible(x: Int, y: Int): Boolean {
+    // Q_Y, Q_x 는 지금 위치 이전에 있는 퀸의 좌표
     for (q_y in 0 until y) {
         val q_x = graph[q_y] // 이전 queen의 x좌표
 
