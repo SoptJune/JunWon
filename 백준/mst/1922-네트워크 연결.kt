@@ -14,6 +14,45 @@ import java.util.PriorityQueue
 private val br = BufferedReader(InputStreamReader(System.`in`))
 private val bw = BufferedWriter(OutputStreamWriter(System.out))
 val parents = IntArray(1001) { -1 }
+
+// 프림
+fun main2() {
+    val N = br.readLine().toInt()
+    val M = br.readLine().toInt()
+    var ans = 0
+    val visited = BooleanArray(1001)
+    val graph = List<MutableList<Pair<Int, Int>>>(N + 1) { mutableListOf() }
+    repeat(M) {
+        val (a, b, cost) = br.readLine().split(" ").map { it.toInt() }
+        graph[a].add(Pair(b, cost))
+        graph[b].add(Pair(a, cost))
+    }
+    var u = 1
+    visited[u] = true
+    val pq = PriorityQueue<Pair<Int, Int>>(compareBy { it.second }).apply { add(Pair(u, 0)) }
+
+    repeat(N - 1) {
+        graph[u].forEach {
+            pq.add(it)
+        }
+        while (pq.isNotEmpty()) {
+            val (v, cost) = pq.remove()
+            if (!visited[v]) {
+                ans += cost
+                visited[v] = true
+                u = v
+                break
+            }
+        }
+    }
+
+    bw.write("$ans")
+    bw.flush()
+    bw.close()
+    br.close()
+}
+
+// 크루스칼
 fun main() {
     br.readLine().toInt()
     val M = br.readLine().toInt()
