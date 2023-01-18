@@ -12,12 +12,12 @@
  * listOf(1, 2, 3, 4, 5).combinations(6) // [[]]
  * listOf(1, 2, 3, 4, 5).combinations(-1) // [[]]
  */
-fun <T> List<T>.combinations(r: Int = this.size): List<List<T>> {
+fun <T> List<T>.combination(r: Int = this.size): List<List<T>> {
     if (r <= 0 || r > this.size) return listOf(emptyList())
     if (r == size) return listOf(this)
     if (r == 1) return map { listOf(it) }
 
-    return drop(1).combinations(r - 1).map { listOf(first()) + it } + drop(1).combinations(r)
+    return drop(1).combination(r - 1).map { listOf(first()) + it } + drop(1).combination(r)
 }
 
 // 근데.. drop할 때마다 새로운 list를 만들기 때문에 비효율적인 거 같음..
