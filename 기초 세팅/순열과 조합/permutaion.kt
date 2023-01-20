@@ -9,12 +9,19 @@ fun main() {
     // 출력값 : []
 }
 
-fun <T> permutation(
-    el: List<T>,
-    fin: List<T> = listOf(),
-    sub: List<T> = el,
-    target: Int = el.size
-): List<List<T>> {
-    return if (target == 0) listOf(fin)
-    else sub.flatMap { permutation(el, fin + it, sub - it, target - 1) }
+/**
+ * List<T>의 모든 순열을 구하는 함수
+ *
+ * @param T
+ * @param r : 순열의 길이
+ * @param cur : 현재까지의 순열
+ * @return List<List<T>>
+ */
+fun <T> List<T>.permutation(r: Int = this.size, cur: List<T> = emptyList()): List<List<T>> {
+    if (r == 0) return listOf(cur)
+    return flatMap {
+        (this - it).permutation(r - 1, cur + it)
+    }
 }
+
+// 얘도 나중에 인덱싱 방식으로 바꿔야할듯.. 공간복잡도, 시간복잡도 너무 많이 사용
