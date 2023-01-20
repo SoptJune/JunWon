@@ -24,7 +24,7 @@ fun <T> List<T>.permutation(r: Int = this.size, cur: List<T> = emptyList()): Lis
     }
 }
 
-// 얘도 나중에 인덱싱 방식으로 바꿔야할듯.. 공간복잡도, 시간복잡도 너무 많이 사용
+// 아래 녀석들 사용하면 됨!!
 
 // Int List
 private fun List<Int>.permutation(
