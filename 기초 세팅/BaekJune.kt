@@ -6,6 +6,9 @@ import java.io.OutputStreamWriter
 private val br = BufferedReader(InputStreamReader(System.`in`))
 private val bw = BufferedWriter(OutputStreamWriter(System.out))
 fun main() {
+    val n = readLine()?.toInt()
+    
+    print(n)
     // n = br.readLine().toInt()
     // ans = 0
 
