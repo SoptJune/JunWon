@@ -1,3 +1,4 @@
+import java.util.*
 
 private val br = System.`in`.bufferedReader()
 private var n = 0
@@ -20,7 +21,8 @@ fun main() {
         graph[s].add(e)
         graph[e].add(s)
     }
-    dfs(a, b, 0)
+    // dfs(a, b, 0)
+    ans = bfs(a,b)
     println(ans)
 }
 
@@ -36,4 +38,21 @@ private fun dfs(x: Int, y: Int,  depth: Int) {
             dfs(p, y, depth+1)
         }
     }
+}
+
+fun bfs(x:Int, y: Int): Int {
+    val q = LinkedList<Pair<Int, Int>>().apply{
+        add(x to 0)
+    }
+    while(q.isNotEmpty()) {
+        val (now, depth) = q.remove()
+        visited[now] = true
+        if(now == y) {
+            return depth
+        }
+        graph[now].forEach {
+            if(!visited[it]) q.add(it to depth+1)
+        }
+    }
+    return -1
 }
