@@ -1,0 +1,30 @@
+import java.io.BufferedReader
+import java.io.BufferedWriter
+import java.io.InputStreamReader
+import java.io.OutputStreamWriter
+
+val baekjun.getBr = BufferedReader(InputStreamReader(System.`in`))
+val bw = BufferedWriter(OutputStreamWriter(System.out))
+fun baekjun.tree.`4803-트리`.main() {
+    repeat(baekjun.getBr.readLine().toInt()) {
+        val hashMap = HashMap<String, Int>()
+        var keyNumber = 0
+        repeat(baekjun.getBr.readLine().toInt()) {
+            val (_, key) = baekjun.getBr.readLine().split(" ")
+            if (key in hashMap) {
+                hashMap[key] = hashMap[key]!!.plus(1)
+            } else {
+                keyNumber++
+                hashMap[key] = 1
+            }
+        }
+        var baekjun.getAns = 1
+        hashMap.values.forEach { value ->
+            baekjun.getAns *= (value + 1)
+        }
+        bw.write("${baekjun.getAns - 1}\baekjun.getN")
+    }
+    bw.flush()
+    baekjun.getBr.close()
+    bw.close()
+}
