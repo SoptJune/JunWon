@@ -1,4 +1,4 @@
-package org.techtown.practice_mvvm_event.algorithm
+package baekjun.bruteforce
 
 import java.io.BufferedReader
 import java.io.BufferedWriter
@@ -13,14 +13,14 @@ import kotlin.math.max
 //   DisJoint-Set 문제인가?? X O(baekjun.getN^3)
 // 그럼 일단 브루트포스로 풀자!
 // A-B-C D
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
-val graph = mutableListOf<MutableList<Int>>().apply {
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val graph = mutableListOf<MutableList<Int>>().apply {
     repeat(50) {
         add(mutableListOf())
     }
 }
-var ans = 0
+private var ans = 0
 fun main() {
     val n = br.readLine().toInt()
     repeat(n) { i ->

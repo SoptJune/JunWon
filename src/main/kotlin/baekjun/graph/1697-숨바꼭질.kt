@@ -1,4 +1,4 @@
-package algorithm
+package baekjun.graph
 
 import java.io.BufferedReader
 import java.io.BufferedWriter

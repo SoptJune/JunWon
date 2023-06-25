@@ -1,10 +1,11 @@
+package baekjun.greedy
 
-val br = System.`in`.bufferedReader()
+private val br = System.`in`.bufferedReader()
 fun main() {
-    val (n, l) = baekjun.tree.`4803`.br.readLine().split(" ").map{it.toInt()}
+    val (n, l) = br.readLine().split(" ").map{it.toInt()}
     val letters = mutableListOf<Pair<Int,Int>>().apply {
         repeat(n) {
-            val (a, b) = baekjun.tree.`4803`.br.readLine().split(" ").map{it.toInt()}
+            val (a, b) = br.readLine().split(" ").map{it.toInt()}
             add(a to b)
         }
     }.sortedBy{it.first}

@@ -1,3 +1,5 @@
+import java.lang.System.*
+
 fun main() {
     // n이 10일 때
     /**
@@ -5,17 +7,17 @@ fun main() {
      * permutation() - 0.160774025
      * permutation2() - 0.0148361625
      */
-    var startTime = System.nanoTime()
+    var startTime = nanoTime()
     (1..10).toList().permutationAll()
-    var endTime = System.nanoTime()
+    var endTime = nanoTime()
     println((endTime - startTime) / 1e10)
-    startTime = System.nanoTime()
+    startTime = nanoTime()
     (1..10).toList().permutation()
-    endTime = System.nanoTime()
+    endTime = nanoTime()
     println((endTime - startTime) / 1e10)
-    startTime = System.nanoTime()
+    startTime = nanoTime()
     (1..10).toList().permutation2()
-    endTime = System.nanoTime()
+    endTime = nanoTime()
     println((endTime - startTime) / 1e10)
 
     // n이 11일 때
@@ -24,17 +26,17 @@ fun main() {
      * permutation() - 2.3766230625
      * permutation2() - 0.1956449166
      */
-    var startTime = System.nanoTime()
+    startTime = nanoTime()
     (1..11).toList().permutationAll()
-    var endTime = System.nanoTime()
+    endTime = nanoTime()
     println("permutationAll() - ${(endTime - startTime) / 1e10}")
-    startTime = System.nanoTime()
+    startTime = nanoTime()
     (1..11).toList().permutation()
-    endTime = System.nanoTime()
+    endTime = nanoTime()
     println("permutation() - ${(endTime - startTime) / 1e10}")
-    startTime = System.nanoTime()
+    startTime = nanoTime()
     (1..11).toList().permutation2()
-    endTime = System.nanoTime()
+    endTime = nanoTime()
     println("permutation2() - ${(endTime - startTime) / 1e10}")
 }
 
@@ -57,7 +59,7 @@ private fun List<Int>.permutationAll(
     return result
 }
 
-fun <T> List<T>.permutation(r: Int = this.size, cur: List<T> = emptyList()): List<List<T>> {
+private fun <T> List<T>.permutation(r: Int = this.size, cur: List<T> = emptyList()): List<List<T>> {
     if (r == 0) return listOf(cur)
     return flatMap {
         (this - it).permutation(r - 1, cur + it)

@@ -1,17 +1,19 @@
+package baekjun.bruteforce.`1360-되돌리기`
+
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 lateinit var graph: MutableList<MutableList<Int>>
 lateinit var visited: BooleanArray
 fun main() {
-    val n = baekjun.tree.`4803`.br.readLine().toInt()
+    val n = br.readLine().toInt()
     val stack: MutableList<List<String>> = mutableListOf<List<String>>().apply {
         repeat(n) {
-            add(baekjun.tree.`4803`.br.readLine().split(" "))
+            add(br.readLine().split(" "))
         }
     }
     var curTime = stack[stack.lastIndex][2].toInt()
@@ -33,5 +35,5 @@ fun main() {
     bw.write("$ans\n")
     bw.flush()
     bw.close()
-    baekjun.tree.`4803`.br.close()
+    br.close()
 }

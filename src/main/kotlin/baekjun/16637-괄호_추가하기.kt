@@ -1,12 +1,12 @@
 package baekjun
 
-val br = System.`in`.bufferedReader()
-var n = 0
+private val br = System.`in`.bufferedReader()
+private var n = 0
 lateinit var str: List<String>
-var ans = Int.MIN_VALUE
+private var ans = Int.MIN_VALUE
 fun main() {
-    n = baekjun.tree.`4803`.br.readLine().toInt()
-    str = baekjun.tree.`4803`.br.readLine().toList().map { it.toString() }
+    n = br.readLine().toInt()
+    str = br.readLine().toList().map { it.toString() }
     val stack = listOf<String>(str[0])
     bf(1, stack)
     println(ans)

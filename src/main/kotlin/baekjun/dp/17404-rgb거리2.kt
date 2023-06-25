@@ -1,3 +1,5 @@
+package baekjun.dp
+
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
@@ -8,11 +10,11 @@ import java.io.OutputStreamWriter
 private val br = BufferedReader(InputStreamReader(System.`in`))
 private val bw = BufferedWriter(OutputStreamWriter(System.out))
 fun main() {
-    val n = baekjun.tree.`4803`.br.readLine().toInt()
+    val n = br.readLine().toInt()
     val rgb = Array(n) { IntArray(3) }
     var ans = (1e9).toInt()
     for (i in 0 until n) {
-        val (r, g, b) = baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() }
+        val (r, g, b) = br.readLine().split(" ").map { it.toInt() }
         rgb[i][0] = r
         rgb[i][1] = g
         rgb[i][2] = b
@@ -33,5 +35,5 @@ fun main() {
     bw.write("$ans")
     bw.flush()
     bw.close()
-    baekjun.tree.`4803`.br.close()
+    br.close()
 }

@@ -1,3 +1,4 @@
+package baekjun.bruteforce
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
@@ -5,20 +6,20 @@ import java.io.OutputStreamWriter
 
 private val br = BufferedReader(InputStreamReader(System.`in`))
 private val bw = BufferedWriter(OutputStreamWriter(System.out))
-var ans = 0
+private var ans = 0
 private lateinit var scoresTotal: MutableList<List<Int>>
 val visited = BooleanArray(9)
 fun main() {
-    val n = baekjun.tree.`4803`.br.readLine().toInt()
+    val n = br.readLine().toInt()
     scoresTotal = mutableListOf<List<Int>>().apply {
         repeat(n) {
-            add(baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() })
+            add(br.readLine().split(" ").map { it.toInt() })
         }
     }
     // 모든 경우의 수
     permutation()
 
-    bw.write("${baekjun.ans}")
+    bw.write("${ans}")
     bw.flush()
 }
 
@@ -73,6 +74,6 @@ private fun startInning(result: IntArray) {
                 }
             }
         }
-        baekjun.ans = maxOf(baekjun.ans, tmpCnt)
+        ans = maxOf(ans, tmpCnt)
     }
 }

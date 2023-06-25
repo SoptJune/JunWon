@@ -1,31 +1,29 @@
-package algorithm
+package baekjun.bruteforce
 
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
-import java.util.Collections
-import kotlin.math.max
 import kotlin.math.min
 
 // 시간 복잡도 O(M- 8 * N -8 * 8^2)
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 
-var board: MutableList<List<Char>> = mutableListOf()
-var chessBoardWhenStartWhite: MutableList<CharArray> = mutableListOf<CharArray>().apply {
+private var board: MutableList<List<Char>> = mutableListOf()
+private var chessBoardWhenStartWhite: MutableList<CharArray> = mutableListOf<CharArray>().apply {
     repeat(8){
         add(CharArray(8))
     }
 }
-var chessBoardWhenStartBlack: MutableList<CharArray> = mutableListOf<CharArray>().apply {
+private var chessBoardWhenStartBlack: MutableList<CharArray> = mutableListOf<CharArray>().apply {
     repeat(8){
         add(CharArray(8))
     }
 }
-const val BLACK = 'B'
-const val WHITE = 'W'
-var ans = 2501
+private const val BLACK = 'B'
+private const val WHITE = 'W'
+private var ans = 2501
 fun main() {
     val (n, m) = br.readLine().split(" ").map {
         it.toInt()

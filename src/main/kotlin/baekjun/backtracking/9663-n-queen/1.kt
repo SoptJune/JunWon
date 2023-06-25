@@ -1,30 +1,32 @@
+package baekjun.backtracking.`9663-n-queen`
+
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 import kotlin.math.abs
 
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
-val n = baekjun.tree.`4803`.br.readLine().toInt()
-val graph = IntArray(baekjun.n)
-var ans = 0
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val n = br.readLine().toInt()
+private val graph = IntArray(n)
+private var ans = 0
 fun main() {
     searchQueen(0)
-    bw.write("${baekjun.ans}\n")
+    bw.write("${ans}\n")
     bw.flush()
     bw.close()
-    baekjun.tree.`4803`.br.close()
+    br.close()
 
 }
 
 private fun searchQueen(y: Int) {
-    if (y == baekjun.n) {
-        baekjun.ans++
+    if (y == n) {
+        ans++
         return
     }
 
-    for (x in 0 until baekjun.n) {
+    for (x in 0 until n) {
         if (isPossible(x, y)) {
             graph[y] = x
             searchQueen(y + 1) // 다음 y축에서 퀸 찾기 

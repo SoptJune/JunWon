@@ -1,7 +1,9 @@
-val br = System.`in`.bufferedReader()
+package baekjun.hashMap
+
+private val br = System.`in`.bufferedReader()
 fun main() {
-    val n = baekjun.tree.`4803`.br.readLine().toInt()
-    val nums = baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() }
+    val n = br.readLine().toInt()
+    val nums = br.readLine().split(" ").map { it.toInt() }
     if (n <= 2) return println(0)
     val map = nums.groupingBy { it }.eachCount().toMutableMap() // 추후에 조절
     var ans = 0

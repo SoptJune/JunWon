@@ -1,3 +1,7 @@
+package init.`순열과 조합`
+
+import java.math.BigInteger
+
 fun main() {
     println(factorial(5)) // 120
 }
@@ -11,7 +15,7 @@ fun main() {
  * @sample
  * factorial(5) // 120
  */
-tailrec fun factorial(n: Int, result: Int = 1): Int {
+private tailrec fun factorial(n: Int, result: Int = 1): Int {
     if (n == 1) return result
     return factorial(n - 1, result * n)
 }
@@ -25,7 +29,7 @@ tailrec fun factorial(n: Int, result: Int = 1): Int {
  * @sample
  * factorial(BigInteger("5")) // 120
  */
-tailrec fun factorial(n: Int, ans: BigInteger = BigInteger("1")): BigInteger {
+private tailrec fun factorial2(n: Int, ans: BigInteger = BigInteger("1")): BigInteger {
     if (n == 1) return ans
-    return factorial(n - 1, ans.multiply(BigInteger("$n")))
+    return factorial2(n - 1, ans.multiply(BigInteger("$n")))
 }

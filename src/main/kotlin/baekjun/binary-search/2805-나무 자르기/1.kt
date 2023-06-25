@@ -1,4 +1,4 @@
-package algorithm
+package baekjun.`binary-search`.`2805-나무 자르기`
 
 import java.io.BufferedReader
 import java.io.BufferedWriter
@@ -9,9 +9,9 @@ import kotlin.math.max
 // (1 ≤ N ≤ 1,000,000, 1 ≤ M ≤ 2,000,000,000)
 // Long 가능, BigInteger 안써도 됨~
 // 필요한 나무의 높이는 1,000,000,000보다 작거나 같은 양의 정수 또는 0이다.
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
-const val MAX_HEIGHT = 2_000_000_000L
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
+private const val MAX_HEIGHT = 2_000_000_000L
 fun main() {
     val (_, m) = br.readLine().split(" ").map { it.toLong() }
     val trees = br.readLine().split(" ").map { it.toLong() }

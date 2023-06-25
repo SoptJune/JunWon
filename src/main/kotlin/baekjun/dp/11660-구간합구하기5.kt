@@ -1,5 +1,7 @@
-val br = System.`in`.bufferedReader()
-val bw = System.out.bufferedWriter()
+package  baekjun.dp
+
+private val br = System.`in`.bufferedReader()
+private val bw = System.out.bufferedWriter()
 
 // x1,y1 ~ x2,y2 합 구하는 프로그램 작성하기
 //  (1 ≤ N ≤ 1024, 1 ≤ M ≤ 100,000)
@@ -9,11 +11,11 @@ val bw = System.out.bufferedWriter()
 private lateinit var graph: List<List<Int>>
 private lateinit var d: Array<IntArray>
 fun main() {
-    val (n, m) = baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() }
+    val (n, m) = br.readLine().split(" ").map { it.toInt() }
     graph = mutableListOf<List<Int>>().apply {
         add(listOf())
         repeat(n) {
-            add(listOf(0) + baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() })
+            add(listOf(0) + br.readLine().split(" ").map { it.toInt() })
         }
         d = Array(n + 1) { IntArray(n + 1) }
     }
@@ -25,12 +27,12 @@ fun main() {
     }
 
     repeat(m) { _ ->
-        val (x1, y1, x2, y2) = baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() }
+        val (x1, y1, x2, y2) = br.readLine().split(" ").map { it.toInt() }
         bw.write("${providePremixSumRangeOf(x1, y1, x2, y2)}\n")
         bw.flush()
     }
     bw.close()
-    baekjun.tree.`4803`.br.close()
+    br.close()
 }
 
 fun providePremixSumRangeOf(x1: Int, y1: Int, x2: Int, y2: Int) =

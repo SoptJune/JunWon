@@ -1,4 +1,4 @@
-package org.techtown.practice_mvvm_event.algorithm
+package baekjun.bruteforce.`1107-리모컨 `
 
 import java.io.BufferedReader
 import java.io.BufferedWriter
@@ -9,8 +9,8 @@ import kotlin.math.min
 
 // N (0 ≤ N ≤ 500,000)이 주어진다.
 // 고장난 버튼의 개수 M (0 ≤ M ≤ 10)
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 
 private var targetChannelNum = 0
 private const val START_NUM = 100

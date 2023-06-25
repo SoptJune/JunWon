@@ -1,3 +1,4 @@
+package baekjun.bruteforce
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
@@ -8,14 +9,14 @@ private val bw = BufferedWriter(OutputStreamWriter(System.out))
 // 7
 // 2 2 7 6 90 5 9
 // 8!
-var ans = 0
+private var ans = 0
 fun main() {
-    val n = baekjun.tree.`4803`.br.readLine().toInt()
-    baekjun.tree.`4803`.br.readLine().split(" ").map{it.toInt()}.permutation()
-    bw.write("${baekjun.ans}")
+    val n = br.readLine().toInt()
+    br.readLine().split(" ").map{it.toInt()}.permutation()
+    bw.write("${ans}")
     bw.flush()
     bw.close()
-    baekjun.tree.`4803`.br.close()
+    br.close()
 }
 
 fun List<Int>.permutation(
@@ -24,7 +25,7 @@ fun List<Int>.permutation(
     visited: Int = 0
 ) {
     if (r == this.size - 2) {
-        baekjun.ans = maxOf(baekjun.ans, cur)
+        ans = maxOf(ans, cur)
         return
     }
     for (i in 1..(this.size - 2)) {

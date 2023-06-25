@@ -1,9 +1,10 @@
+package baekjun.`topological-sort`
 import java.util.*
-val br = System.`in`.bufferedReader()
+private val br = System.`in`.bufferedReader()
 fun main() {
-    repeat(baekjun.tree.`4803`.br.readLine().toInt()) {
-        val n = baekjun.tree.`4803`.br.readLine().toInt()
-        val orders = baekjun.tree.`4803`.br.readLine().split(" ").map{it.toInt()}
+    repeat(br.readLine().toInt()) {
+        val n = br.readLine().toInt()
+        val orders = br.readLine().split(" ").map{it.toInt()}
         val adj = Array<BooleanArray>(n+1){BooleanArray(n+1)}
         val indegree = IntArray(n+1)
         for(i in 0 until n) {
@@ -13,10 +14,10 @@ fun main() {
             }
         }
 
-        val m = baekjun.tree.`4803`.br.readLine().toInt()
+        val m = br.readLine().toInt()
         // 1) 진입차수 다시 초기화
         repeat(m) { // 순위
-            val (a , b) = baekjun.tree.`4803`.br.readLine().split(" ").map{it.toInt()}
+            val (a , b) = br.readLine().split(" ").map{it.toInt()}
             if(adj[a][b]){ // 작년에 a -> b였던 경우
                 adj[a][b] = false
                 indegree[b]--
@@ -60,4 +61,5 @@ fun main() {
         else if(ans.size < n) println("IMPOSSIBLE")  // cycle
         else println(ans.joinToString(" "))
     }
+    br.close()
 }

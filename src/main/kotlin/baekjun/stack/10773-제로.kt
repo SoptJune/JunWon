@@ -1,20 +1,22 @@
+package baekjun.stack
+
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 
 // O(N)
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 fun main(){
 
     val stack = mutableListOf<Int>()
     var cnt = 0
 
 
-    repeat(baekjun.tree.`4803`.br.readLine().toInt()) {
+    repeat(br.readLine().toInt()) {
 
-        var currentValue = baekjun.tree.`4803`.br.readLine().toInt()
+        var currentValue = br.readLine().toInt()
 
         if (currentValue == 0 && stack.isNotEmpty()) {
                 cnt -= stack[stack.lastIndex]
@@ -27,5 +29,5 @@ fun main(){
     bw.write("" + cnt + "\n")
     bw.flush()
     bw.close()
-    baekjun.tree.`4803`.br.close()
+    br.close()
 }

@@ -1,14 +1,16 @@
+package baekjun.`two-pointer`
+
 import kotlin.math.abs
 
-val br = System.`in`.bufferedReader()
-val bw = System.out.bufferedWriter()
+private val br = System.`in`.bufferedReader()
+private val bw = System.out.bufferedWriter()
 
 // 10C2 는 시간초과
 // i, j 투 포인터 알고리즘
 // if arr[i]+ arr[j] > 0 -> i--
 // else j--
 fun main() {
-    with(baekjun.tree.`4803`.br) {
+    with(br) {
         val n = readLine().toInt()
         val a = readLine().split(" ").map { it.toInt() }
         var i = 0

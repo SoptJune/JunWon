@@ -1,3 +1,5 @@
+package baekjun.mst
+
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
@@ -13,7 +15,7 @@ private val bw = BufferedWriter(OutputStreamWriter(System.out))
 // MST 만들고 가장 Cost가 큰 길을 없애면 된다.
 // N-1 * 1000 <= 10^8 즉, Int로 충분
 fun main() {
-    val (N, M) = baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() }
+    val (N, M) = br.readLine().split(" ").map { it.toInt() }
     var ans = 0
     val costs = mutableListOf<Int>()
     val visited = BooleanArray(N + 1)
@@ -22,7 +24,7 @@ fun main() {
     var u = 1
     visited[u] = true
     repeat(M) {
-        val (s, e, c) = baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() }
+        val (s, e, c) = br.readLine().split(" ").map { it.toInt() }
         graph[s].add(Pair(e, c))
         graph[e].add(Pair(s, c))
     }
@@ -43,6 +45,6 @@ fun main() {
     }
     bw.write("${ans - costs.max()}")
     bw.flush()
-    baekjun.tree.`4803`.br.close()
+    br.close()
     bw.close()
 }

@@ -1,14 +1,15 @@
+package baekjun.`topological-sort`
 import java.util.*
-val br = System.`in`.bufferedReader()
+private val br = System.`in`.bufferedReader()
 // a : 97
 fun main() {
     // println('z'.code - 'a'.code + 1) // 26
-    val n = baekjun.tree.`4803`.br.readLine().toInt()
+    val n = br.readLine().toInt()
     val orders = Array<MutableList<Int>>(26){mutableListOf<Int>()}
     val indegree = mutableMapOf<Int, Int>()
     val words = mutableListOf<String>()
     repeat(n) {
-        val s = baekjun.tree.`4803`.br.readLine()
+        val s = br.readLine()
         s.forEach { c ->
             indegree[c.code - 97] = 0 // 입력 받은 모든 단어 진입차수 초기화
         }
@@ -59,6 +60,7 @@ fun main() {
     if(ans.length < indegree.size) println("!")
     else if(isManyAns) println("?")
     else println(ans.trim())
+    br.close()
 }
 /** 왜 인접배열 방식으로 풀면 틀리지..?? */
 

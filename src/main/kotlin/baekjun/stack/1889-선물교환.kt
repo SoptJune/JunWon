@@ -1,3 +1,4 @@
+package baekjun.stack
 
 import java.io.BufferedReader
 import java.io.BufferedWriter
@@ -5,8 +6,8 @@ import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 import java.util.*
 
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 // n의 범위 3 ~ 200_000 
 // O(N^2)으로 풀 수 없으니 브루트 포스는 아님
 // 진입차수가 0 혹은 1일 때 간선들을 제거하는 방식으로 풀어야함  
@@ -14,13 +15,13 @@ val bw = BufferedWriter(OutputStreamWriter(System.out))
 // stack 혹은 queue문제이다.
 
 fun main() {
-    val n = baekjun.tree.`4803`.br.readLine().toInt()
+    val n = br.readLine().toInt()
     val indegree = IntArray(n + 1) // 진입 차수
     val graph = Array<IntArray>(n + 1) { IntArray(2) }
     val visited = BooleanArray(n + 1)
     repeat(n) { it ->
         val node = it + 1
-        val (a, b) = baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() }
+        val (a, b) = br.readLine().split(" ").map { it.toInt() }
         graph[node][0] = a
         graph[node][1] = b
         indegree[a] += 1
@@ -56,5 +57,5 @@ fun main() {
     }
     bw.flush()
     bw.close()
-    baekjun.tree.`4803`.br.close()
+    br.close()
 }

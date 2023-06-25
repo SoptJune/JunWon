@@ -1,15 +1,24 @@
+package init.mst
+
+import java.io.BufferedReader
+import java.io.BufferedWriter
+import java.io.InputStreamReader
+import java.io.OutputStreamWriter
 import java.util.PriorityQueue
 
 // 네트워크 연결 문제 (백준 - 1922)
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
+
 fun main() {
-    val N = baekjun.tree.`4803`.br.readLine().toInt()
-    val M = baekjun.tree.`4803`.br.readLine().toInt()
+    val N = br.readLine().toInt()
+    val M = br.readLine().toInt()
     var ans = 0
     val visited = BooleanArray(1001)
     val graph = List<MutableList<Pair<Int, Int>>>(N + 1) { mutableListOf() }
     // 0. 인접 리스트 방식 graph 생성
     repeat(M) {
-        val (a, b, cost) = baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() }
+        val (a, b, cost) = br.readLine().split(" ").map { it.toInt() }
         graph[a].add(Pair(b, cost))
         graph[b].add(Pair(a, cost))
     }
@@ -41,5 +50,5 @@ fun main() {
     bw.write("$ans")
     bw.flush()
     bw.close()
-    baekjun.tree.`4803`.br.close()
+    br.close()
 }

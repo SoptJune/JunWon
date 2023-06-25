@@ -1,3 +1,4 @@
+package baekjun.`binary-search`
 fun main() {
     val br = System.`in`.bufferedReader()
     val (_, m) = br.readLine().split(" ").map{it.toInt()}

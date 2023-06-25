@@ -1,27 +1,28 @@
+package baekjun.bruteforce.봄버맨
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
-val dx: List<Int> = listOf(1, 0, 0, -1)
-val dy: List<Int> = listOf(0, -1, 1, 0)
-const val BOMB = "O"
-const val EMPTY = "."
-val timeTable: List<IntArray> = mutableListOf<IntArray>().apply {
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val dx: List<Int> = listOf(1, 0, 0, -1)
+private val dy: List<Int> = listOf(0, -1, 1, 0)
+private const val BOMB = "O"
+private const val EMPTY = "."
+private val timeTable: List<IntArray> = mutableListOf<IntArray>().apply {
     repeat(200) {
         add(IntArray(200))
     }
 }
 private lateinit var graph: List<MutableList<String>>
 fun main() {
-    val (n, m, LIMIT) = baekjun.tree.`4803`.br.readLine().split(" ").map {
+    val (n, m, LIMIT) = br.readLine().split(" ").map {
         it.toInt()
     }
     graph = mutableListOf<MutableList<String>>().apply {
         repeat(n) { i ->
-            add(baekjun.tree.`4803`.br.readLine().toList().mapIndexed { j, value ->
+            add(br.readLine().toList().mapIndexed { j, value ->
                 val tmp = value.toString()
                 tmp
             }.toMutableList())
@@ -39,7 +40,7 @@ fun main() {
         bw.write("${row.joinToString("")}\n")
     }
     bw.flush()
-    baekjun.tree.`4803`.br.close()
+    br.close()
     bw.close()
 }
 

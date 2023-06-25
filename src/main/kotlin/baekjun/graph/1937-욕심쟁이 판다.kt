@@ -1,3 +1,5 @@
+package baekjun.graph
+
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
@@ -15,30 +17,30 @@ private val bw = BufferedWriter(OutputStreamWriter(System.out))
 // backTracking ? O(V^2 * V^2) 시간 초과
 private lateinit var graph: Array<IntArray> // Array(baekjun.getN){IntArray(baekjun.getN)}
 private lateinit var visited: Array<IntArray>
-val dx = listOf(1, 0, 0, -1)
-val dy = listOf(0, 1, -1, 0)
+private val dx = listOf(1, 0, 0, -1)
+private val dy = listOf(0, 1, -1, 0)
 private var n = 0
 private var ans = 0
 fun main() {
-    baekjun.n = baekjun.tree.`4803`.br.readLine().toInt()
-    graph = Array(baekjun.n) { IntArray(baekjun.n) }.apply {
+    n = br.readLine().toInt()
+    graph = Array(n) { IntArray(n) }.apply {
 //        println(this[0][0])
-        repeat(baekjun.n) { i ->
-            baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() }.forEachIndexed { j, tree ->
+        repeat(n) { i ->
+            br.readLine().split(" ").map { it.toInt() }.forEachIndexed { j, tree ->
                 this[i][j] = tree
             }
         }
     }
-    visited = Array(baekjun.n) { IntArray(baekjun.n) { -1 } }
+    visited = Array(n) { IntArray(n) { -1 } }
 
-    for (i in 0..baekjun.n - 1) {
-        for (j in 0..baekjun.n - 1) {
-            baekjun.ans = maxOf(baekjun.ans, dfs(i, j)) // i,j 에서 출발했을 때 최대 방문 수
+    for (i in 0..n - 1) {
+        for (j in 0..n - 1) {
+            ans = maxOf(ans, dfs(i, j)) // i,j 에서 출발했을 때 최대 방문 수
         }
     }
-    bw.write("${baekjun.ans}")
+    bw.write("${ans}")
     bw.flush()
-    baekjun.tree.`4803`.br.close()
+    br.close()
     bw.close()
 }
 
@@ -48,7 +50,7 @@ private fun dfs(i: Int, j: Int): Int {
     repeat(4) {
         val x = i + dx[it]
         val y = j + dy[it]
-        if (x in 0..baekjun.n - 1 && y in 0..baekjun.n - 1 && graph[x][y] > graph[i][j]) {
+        if (x in 0..n - 1 && y in 0..n - 1 && graph[x][y] > graph[i][j]) {
             visited[i][j] = maxOf(visited[i][j], dfs(x, y) + 1)
             // d[i][j] = max(d[i][j], (x,y)에서의 최대 방문 수 + 1), 1은 (x, y)를 방문했기 때문에 1을 더한다
         }

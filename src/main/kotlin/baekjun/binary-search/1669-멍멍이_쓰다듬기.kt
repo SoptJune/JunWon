@@ -1,8 +1,10 @@
+package baekjun.`binary-search`
 import kotlin.math.*
+
 private val br = System.`in`.bufferedReader()
 fun main() {
     // 2 * 1e9
-    val (a, b) = baekjun.tree.`4803`.br.readLine().split(" ").map{it.toInt()}
+    val (a, b) = br.readLine().split(" ").map{it.toInt()}
     val target = b - a
     // 2147483647
     // 이분 탐색

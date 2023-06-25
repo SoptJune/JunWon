@@ -1,7 +1,8 @@
+package baekjun.math
 import kotlin.math.sqrt
 
-val br = System.`in`.bufferedReader()
-val bw = System.out.bufferedWriter()
+private val br = System.`in`.bufferedReader()
+private val bw = System.out.bufferedWriter()
 
 fun initTable() {
     for (i in 2..sqrt(1_000_000.0).toInt()) {
@@ -20,7 +21,7 @@ fun provideFormattedAnswer(n: Int, m: Int, k: Int) = "$n = $m + $k"
 fun main() = run {
     initTable()
     while (true) {
-        val n = baekjun.tree.`4803`.br.readLine().toInt()
+        val n = br.readLine().toInt()
         if (n == 0) return@run
         for (i in 3..n) {
             if (table[i] && table[n - i]) {

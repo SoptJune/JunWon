@@ -1,7 +1,9 @@
-val br = System.`in`.bufferedReader()
+package baekjun.`two-pointer`
+
+private val br = System.`in`.bufferedReader()
 fun main() {
-    val n = baekjun.tree.`4803`.br.readLine().toInt()
-    val nums = baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() }.sorted()
+    val n = br.readLine().toInt()
+    val nums = br.readLine().split(" ").map { it.toInt() }.sorted()
     var ans = 0
     nums.indices.forEach {
         val idx = it

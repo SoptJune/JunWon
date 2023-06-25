@@ -1,14 +1,16 @@
+package baekjun.greedy.`9237-이장님 초대`
+
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 import kotlin.math.max
 
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 fun main() {
-    val n = baekjun.tree.`4803`.br.readLine().toInt()
-    val trees = baekjun.tree.`4803`.br.readLine()
+    val n = br.readLine().toInt()
+    val trees = br.readLine()
         .split(" ")
         .map { it.toInt() }
         .sortedDescending() // 내림차순으로 정렬
@@ -21,5 +23,5 @@ fun main() {
     bw.write("${++ans}\n") // 이장님은 나무 다 심은 뒤 하루 뒤 오시니까 +1 ㅎ ㅎ ㅎ
     bw.flush()
     bw.close()
-    baekjun.tree.`4803`.br.close()
+    br.close()
 }

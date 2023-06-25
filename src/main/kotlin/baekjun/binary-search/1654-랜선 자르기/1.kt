@@ -1,19 +1,18 @@
-package algo
+package baekjun.`binary-search`.`1654-랜선 자르기`
 
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
-import java.util.*
 import kotlin.math.max
 
 // 각 랜선 길이 2^31 -1 이하
 // 총 랜선 개수 <= 10_000
 // 필요한 랜선 개수 <= 1_000_000 -> Long 가능
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
-val arr = LongArray(10_000)
-var ans = 0L
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val arr = LongArray(10_000)
+private var ans = 0L
 fun main() {
     val (k, n) = br.readLine().split(" ").map { it.toInt() }
     repeat(k) { i ->

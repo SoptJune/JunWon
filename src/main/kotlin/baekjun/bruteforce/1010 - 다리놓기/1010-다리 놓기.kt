@@ -1,18 +1,19 @@
+package baekjun.bruteforce.`1010 - 다리놓기`
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 import java.math.BigInteger
 
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 fun main() {
-    repeat(baekjun.tree.`4803`.br.readLine().toInt()) {
-        val (m, n) = baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() }
+    repeat(br.readLine().toInt()) {
+        val (m, n) = br.readLine().split(" ").map { it.toInt() }
         bw.write("${combination(n, m)}\n")
         bw.flush()
     }
-    baekjun.tree.`4803`.br.close()
+    br.close()
     bw.close()
 }
 

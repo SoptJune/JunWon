@@ -1,3 +1,5 @@
+package baekjun.greedy
+
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
@@ -29,10 +31,10 @@ val alpMap = mutableMapOf<Char, Int>().apply {
 fun main() {
     val nums = (0..9).toMutableList()
     var ans = 0
-    val n = baekjun.tree.`4803`.br.readLine().toInt()
+    val n = br.readLine().toInt()
     // 계산 좀 편하게 할려고 이렇게 했는데.. 괜히 이렇게 했네
     repeat(n) {
-        val curAlpha = baekjun.tree.`4803`.br.readLine()
+        val curAlpha = br.readLine()
         alphabets[it] = DEFAULT_FORMAT.slice(0..7 - curAlpha.length) + curAlpha
     }
 //    println(alphabets.toList())
@@ -66,7 +68,8 @@ fun main() {
     }
     bw.write("$ans")
     bw.flush()
-    baekjun.tree.`4803`.br.close()
+    br.close()
     bw.close()
 }
+
 private fun Int.pow(digit: Int) = this.toFloat().pow(digit).toInt()

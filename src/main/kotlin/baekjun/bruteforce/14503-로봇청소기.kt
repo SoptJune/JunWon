@@ -1,15 +1,15 @@
+package baekjun.bruteforce
 private val br = System.`in`.bufferedReader()
 private var cnt = 0
 private val dx = listOf(-1,0,1,0)
 private val dy = listOf(0,1,0,-1)
 private lateinit var graph: Array<IntArray>
 fun main() {
-    println(Shape.E.name)
-    val (n, m) = baekjun.tree.`4803`.br.readLine().split(" ").map{it.toInt()}
-    val (x, y, d) = baekjun.tree.`4803`.br.readLine().split(" ").map{it.toInt()}
+    val (n, m) = br.readLine().split(" ").map{it.toInt()}
+    val (x, y, d) = br.readLine().split(" ").map{it.toInt()}
     graph = Array<IntArray>(n){IntArray(m)}.apply {
         repeat(n) {
-            this[it] = baekjun.tree.`4803`.br.readLine().split(" ").map{it.toInt()}.toIntArray()
+            this[it] = br.readLine().split(" ").map{it.toInt()}.toIntArray()
         }
     }
     

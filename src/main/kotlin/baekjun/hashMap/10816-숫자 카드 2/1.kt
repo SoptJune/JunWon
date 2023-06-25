@@ -1,12 +1,12 @@
-package algo
+package baekjun.hashMap.`10816-숫자 카드 2`
 
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 fun main() {
     val n = br.readLine().toInt()
     val numList = br.readLine().split(" ").map { it.toInt() }

@@ -1,9 +1,11 @@
-val br = System.`in`.bufferedReader()
+package baekjun.`two-pointer`
+
+private val br = System.`in`.bufferedReader()
 fun main() {
 
-    val g = baekjun.tree.`4803`.br.readLine().toInt()
+    val g = br.readLine().toInt()
     var s = 1
-    var e = 1 
+    var e = 1
     val ansList = mutableListOf<Int>()
 
     while (true) {

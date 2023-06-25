@@ -1,4 +1,4 @@
-package org.techtown.practice_mvvm_event.algorithm
+package baekjun.graph
 
 import java.io.BufferedReader
 import java.io.BufferedWriter
@@ -9,8 +9,8 @@ import java.util.*
 
 // N은 2 이상 100 이하의 정수
 // 높이는 1이상 100 이하의 정수이다.
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 
 private var n = 0
 private var ans = 1

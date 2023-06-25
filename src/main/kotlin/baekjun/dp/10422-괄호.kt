@@ -1,13 +1,13 @@
-
-const val MOD = 1_000_000_007
-val br = System.`in`.bufferedReader()
-val d = LongArray(5001).apply{this[0] = 1; this[1]= 1}
+package baekjun.dp
+private const val MOD = 1_000_000_007
+private val br = System.`in`.bufferedReader()
+private val d = LongArray(5001).apply{this[0] = 1; this[1]= 1}
 fun main() {
     // 5000
     catalan(2500)
     // 카탈란 수 
-    repeat(baekjun.tree.`4803`.br.readLine().toInt()) {
-        val n = baekjun.tree.`4803`.br.readLine().toInt()
+    repeat(br.readLine().toInt()) {
+        val n = br.readLine().toInt()
         if(n % 2 == 1) println(0)
         else println(d[n / 2])
     }

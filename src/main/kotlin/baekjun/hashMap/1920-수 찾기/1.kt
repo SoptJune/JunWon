@@ -1,12 +1,12 @@
-package algo
+package baekjun.hashMap.`1920-수 찾기`
 
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 fun main() {
     val n = br.readLine().toInt()
     val numHashMap = hashMapOf<Int, Int>()

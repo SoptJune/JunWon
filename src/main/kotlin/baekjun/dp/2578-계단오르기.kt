@@ -1,4 +1,4 @@
-package algorithm
+package baekjun.dp
 
 import java.io.BufferedReader
 import java.io.BufferedWriter
@@ -12,10 +12,10 @@ import kotlin.math.max
 // 2계단 점프 : An + d[baekjun.getN-2]
 // 1계단 점프 : An + An-1 + d[baekjun.getN-3]
 // 점화식 d[baekjun.getN] = An + max ( d[baekjun.getN-2] , An-1 + d[baekjun.getN-3] )
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 
-val d = IntArray(300 + 1)
+private val d = IntArray(300 + 1)
 val stairs = IntArray(300 + 1)
 fun main() {
     val n = br.readLine().toInt()

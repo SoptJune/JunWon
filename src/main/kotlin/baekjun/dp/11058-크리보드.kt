@@ -1,7 +1,7 @@
-
+package baekjun.dp
 private val br = System.`in`.bufferedReader()
 fun main() {
-    val n = baekjun.tree.`4803`.br.readLine().toInt()
+    val n = br.readLine().toInt()
     val d = LongArray(100+1)
     d[1] = 1L
     d[2] = 2L

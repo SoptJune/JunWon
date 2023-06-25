@@ -1,13 +1,15 @@
+package baekjun.greedy
+
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 import java.lang.Integer.min
 
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 fun main() {
-    with(baekjun.tree.`4803`.br) {
+    with(br) {
         var cnt = 0
         while (true) {
             cnt++

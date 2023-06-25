@@ -1,10 +1,10 @@
-package org.techtown.practice_mvvm_event.algorithm
+package baekjun.`topological-sort`
 
 import java.io.*
 import java.util.*
 
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 fun main() {
     val (n, m) = br.readLine().split(" ").map { it.toInt() }
     val indegree = IntArray(n + 1)

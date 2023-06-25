@@ -1,3 +1,4 @@
+package baekjun.dp
 // 홍보를 할 수 있는 도시 : baekjun.getN
 // c <= 1000 , baekjun.getN <= 20
 //  도시별로 홍보하는데 드는 비용과, 그 때 몇 명의 호텔 고객이 늘어나는지
@@ -10,14 +11,14 @@
 // 중복 발생 -> dp..? 
 // Dn = min(Ai + Dn-i) (i는 1~20), O = 1000 * 20, dn은 n명을 늘리기 위해 필요한 최소 비용
 //  적어도 C명 이상~
-val br = System.`in`.bufferedReader()
-val bw = System.out.bufferedWriter()
+private val br = System.`in`.bufferedReader()
+private val bw = System.out.bufferedWriter()
 
 fun main() {
-    val (target, n) = baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() }
+    val (target, n) = br.readLine().split(" ").map { it.toInt() }
     val li = mutableListOf<Pair<Int, Int>>().apply {
         repeat(n) {
-            val (c, p) = baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() }
+            val (c, p) = br.readLine().split(" ").map { it.toInt() }
             add(c to p)
         }
     }
@@ -32,5 +33,5 @@ fun main() {
 
     bw.write("${d.drop(target).min()}\n")
     bw.close()
-    baekjun.tree.`4803`.br.close()
+    br.close()
 }

@@ -1,3 +1,5 @@
+package baekjun.graph
+
 import java.util.*
 
 private val br = System.`in`.bufferedReader()
@@ -7,29 +9,29 @@ private lateinit var graph: MutableList<MutableList<Int>>
 private lateinit var visited: BooleanArray
 private var ans = -1
 fun main() {
-    baekjun.n = baekjun.tree.`4803`.br.readLine().toInt()
-    val (a, b) = baekjun.tree.`4803`.br.readLine().split(" ").map{ it.toInt()}
-    m = baekjun.tree.`4803`.br.readLine().toInt()
+    n = br.readLine().toInt()
+    val (a, b) = br.readLine().split(" ").map{ it.toInt()}
+    m = br.readLine().toInt()
     graph = mutableListOf<MutableList<Int>>().apply{
-        repeat(baekjun.n +1) {
+        repeat(n +1) {
             add(mutableListOf<Int>())
         }
     }
-    visited = BooleanArray(baekjun.n + 1)
+    visited = BooleanArray(n + 1)
     repeat(m) {
-        val (s, e) = baekjun.tree.`4803`.br.readLine().split(" ").map{ it.toInt()}
+        val (s, e) = br.readLine().split(" ").map{ it.toInt()}
         graph[s].add(e)
         graph[e].add(s)
     }
     // dfs(a, b, 0)
-    baekjun.ans = bfs(a,b)
-    println(baekjun.ans)
+    ans = bfs(a,b)
+    println(ans)
 }
 
 private fun dfs(x: Int, y: Int,  depth: Int) {
     visited[x] = true
     if(x == y) {
-        baekjun.ans = depth
+        ans = depth
         return
     }
 
@@ -40,7 +42,7 @@ private fun dfs(x: Int, y: Int,  depth: Int) {
     }
 }
 
-fun bfs(x:Int, y: Int): Int {
+private fun bfs(x:Int, y: Int): Int {
     val q = LinkedList<Pair<Int, Int>>().apply{
         add(x to 0)
     }

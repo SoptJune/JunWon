@@ -1,14 +1,14 @@
-package algorithm
+package baekjun.stack.`9935-문자열폭발`
 
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
-var stack = StringBuilder()
-const val EMPTY_STRING = "FRULA"
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
+private var stack = StringBuilder()
+private const val EMPTY_STRING = "FRULA"
 fun main() {
     val string = br.readLine()
     val bombString = br.readLine() // length = 36

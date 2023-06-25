@@ -1,13 +1,15 @@
+package baekjun.sort.`1431-시리얼 번호`
+
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 fun main() {
-    val n = baekjun.tree.`4803`.br.readLine().toInt()
-    val arr = arrayListOf<String>().apply { repeat(n) { add(baekjun.tree.`4803`.br.readLine()) } }
+    val n = br.readLine().toInt()
+    val arr = arrayListOf<String>().apply { repeat(n) { add(br.readLine()) } }
     arr.sortedWith(compareBy({ it.length }, { str ->
         var cnt = 0
         str.forEach { if (it.code < 65) cnt += it.toString().toInt() }
@@ -18,5 +20,5 @@ fun main() {
     }
     bw.flush()
     bw.close()
-    baekjun.tree.`4803`.br.close()
+    br.close()
 }

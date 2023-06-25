@@ -1,4 +1,4 @@
-package algorithm
+package baekjun.math
 
 import java.io.BufferedReader
 import java.io.BufferedWriter

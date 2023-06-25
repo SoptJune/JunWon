@@ -1,18 +1,20 @@
+package baekjun.stack.`16916-부분문자열`
+
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 
 fun main() {
-    val parent = baekjun.tree.`4803`.br.readLine()
-    val subString = baekjun.tree.`4803`.br.readLine()
+    val parent = br.readLine()
+    val subString = br.readLine()
     kmp(parent, subString)
 
     bw.flush()
-    baekjun.tree.`4803`.br.close()
+    br.close()
     bw.close()
 }
 

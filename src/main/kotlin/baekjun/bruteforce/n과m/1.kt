@@ -1,3 +1,4 @@
+package baekjun.bruteforce.n과m
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
@@ -7,11 +8,11 @@ import java.io.OutputStreamWriter
 // nCm 순서대로 나열
 // 백트래킹
 // O(8!) = 약 4만의 연산
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 
 fun main() {
-    val (n, m) = baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() }
+    val (n, m) = br.readLine().split(" ").map { it.toInt() }
     val visited = mutableListOf<Boolean>().apply {
         repeat(n + 1) {
             add(false)
@@ -19,7 +20,7 @@ fun main() {
     }
     backTracking(n, m, mutableListOf<Int>(), 0, visited)
     bw.flush()
-    baekjun.tree.`4803`.br.close()
+    br.close()
     bw.close()
 }
 

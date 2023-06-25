@@ -1,12 +1,5 @@
 fun main() {
-    println(permutation(listOf(1,2,3,4,5))) 
-    // 출력값 [[1, 2, 3, 4, 5], [1, 2, 3, 5, 4], [1, 2, 4, 3, 5] ... ]
-    println(permutation(listOf(1,2,3,4,5), target = 5))
-    // 출력값 : 위와 같음
-    println(permutation(listOf(1,2,3,4,5), target = 4))
-    // 출력값 : [[1, 2, 3, 4], [1, 2, 3, 5], [1, 2, 4, 3], ...
-    println(permutation(listOf(1,2,3,4,5), target = 6))
-    // 출력값 : []
+
 }
 
 /**
@@ -17,7 +10,7 @@ fun main() {
  * @param cur : 현재까지의 순열
  * @return List<List<T>>
  */
-fun <T> List<T>.permutation(r: Int = this.size, cur: List<T> = emptyList()): List<List<T>> {
+private fun <T> List<T>.permutation(r: Int = this.size, cur: List<T> = emptyList()): List<List<T>> {
     if (r == 0) return listOf(cur)
     return flatMap {
         (this - it).permutation(r - 1, cur + it)
@@ -27,7 +20,7 @@ fun <T> List<T>.permutation(r: Int = this.size, cur: List<T> = emptyList()): Lis
 // 아래 녀석들 사용하면 됨!!
 
 // Int List
-private fun List<Int>.permutation(
+private fun List<Int>.permutationInt(
     r: Int = this.size,
     curArr: MutableList<Int> = MutableList(r) { 0 },
     visited: Int = 0
@@ -39,13 +32,13 @@ private fun List<Int>.permutation(
     forEachIndexed { i, v ->
         if (visited and (1 shl i) == 0) {
             curArr[curArr.size - r] = v
-            permutation(r - 1, curArr, visited or (1 shl i))
+            permutationInt(r - 1, curArr, visited or (1 shl i))
         }
     }
 }
 
 // String List
-private fun List<String>.permutation(
+private fun List<String>.permutationString(
     r: Int = this.size,
     curArr: MutableList<String> = MutableList(r) { "" },
     visited: Int = 0
@@ -57,7 +50,7 @@ private fun List<String>.permutation(
     forEachIndexed { i, v ->
         if (visited and (1 shl i) == 0) {
             curArr[curArr.size - r] = v
-            permutation(r - 1, curArr, visited or (1 shl i))
+            permutationString(r - 1, curArr, visited or (1 shl i))
         }
     }
 }
@@ -65,7 +58,7 @@ private fun List<String>.permutation(
 // Int List
 // ex) println(listOf(1, 2, 3).permutationAll())
 // output : [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
-private fun List<Int>.permutationAll(
+private fun List<Int>.permutationIntAll(
     r: Int = this.size,
     curArr: MutableList<Int> = MutableList(r) { 0 },
     visited: Int = 0,
@@ -78,7 +71,7 @@ private fun List<Int>.permutationAll(
     forEachIndexed { i, v ->
         if (visited and (1 shl i) == 0) {
             curArr[curArr.size - r] = v
-            permutationAll(r - 1, curArr, visited or (1 shl i), result)
+            permutationIntAll(r - 1, curArr, visited or (1 shl i), result)
         }
     }
     return result
@@ -87,7 +80,7 @@ private fun List<Int>.permutationAll(
 // String List
 // ex) println(listOf("1", "2", "3").permutationAll())
 // output : [[1, 2, 3], [1, 3, 2], [2, 1, 3], [2, 3, 1], [3, 1, 2], [3, 2, 1]]
-private fun List<String>.permutationAll(
+private fun List<String>.permutationStringAll(
     r: Int = this.size,
     curArr: MutableList<String> = MutableList(r) { "" },
     visited: Int = 0,
@@ -100,7 +93,7 @@ private fun List<String>.permutationAll(
     forEachIndexed { i, v ->
         if (visited and (1 shl i) == 0) {
             curArr[curArr.size - r] = v
-            permutationAll(r - 1, curArr, visited or (1 shl i), result)
+            permutationStringAll(r - 1, curArr, visited or (1 shl i), result)
         }
     }
     return result

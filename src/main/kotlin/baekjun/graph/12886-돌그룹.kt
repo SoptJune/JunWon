@@ -1,3 +1,4 @@
+package baekjun.graph
 private val br = System.`in`.bufferedReader()
 private val bw = System.out.bufferedWriter()
 // 강호는 모든 그룹에 있는 돌의 개수를 같게 만들려고 한다.
@@ -13,21 +14,21 @@ private val bw = System.out.bufferedWriter()
 private var pivot = 0
 private val visited = Array(1499){IntArray(1499)}
 fun main() {
-    val (a, b, c) = baekjun.tree.`4803`.br.readLine().split(" ").map{it.toInt()}
+    val (a, b, c) =br.readLine().split(" ").map{it.toInt()}
     val total = a + b + c
     pivot = total / 3
     if(total % 3 > 0){
         bw.write("0")
         bw.flush()
         bw.close()
-        baekjun.tree.`4803`.br.close()
+        br.close()
         return
     }
     dfs(a, b, c)
     bw.write("${visited[pivot][pivot]}")
     bw.flush()
     bw.close()
-    baekjun.tree.`4803`.br.close()
+    br.close()
 }
 
 private fun dfs(a: Int, b:Int, c:Int) {

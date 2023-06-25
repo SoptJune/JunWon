@@ -1,3 +1,4 @@
+package baekjun.`binary-search`
 import java.io.BufferedReader
 import java.io.BufferedWriter
 import java.io.InputStreamReader
@@ -18,8 +19,8 @@ import java.io.OutputStreamWriter
 private val br = BufferedReader(InputStreamReader(System.`in`))
 private val bw = BufferedWriter(OutputStreamWriter(System.out))
 fun main() {
-    val (_, m) = baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() }
-    val nums = baekjun.tree.`4803`.br.readLine().split(" ").map { it.toInt() }
+    val (_, m) = br.readLine().split(" ").map { it.toInt() }
+    val nums = br.readLine().split(" ").map { it.toInt() }
     var ans = 10_000
     var (s, e) = listOf(0, 10_001)
     // 파라매트릭스 문제
@@ -34,7 +35,7 @@ fun main() {
     }
     bw.write("$ans")
     bw.flush()
-    baekjun.tree.`4803`.br.close()
+    br.close()
     bw.close()
 }
 
