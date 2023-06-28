@@ -22,6 +22,7 @@ repositories {
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.8.20")
+    implementation("org.junit.jupiter:junit-jupiter:5.8.1")
     // test
     testImplementation("com.google.truth:truth:1.1.3")
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
