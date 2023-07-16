@@ -1,6 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.jetbrains.kotlin.konan.properties.Properties
-
 plugins {
     kotlin("jvm") version "1.8.20"
     id("java-library")
