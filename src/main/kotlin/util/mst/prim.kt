@@ -1,4 +1,4 @@
-package init.mst
+package util.mst
 
 import java.io.BufferedReader
 import java.io.BufferedWriter

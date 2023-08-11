@@ -1,4 +1,4 @@
-package init.`순열과 조합`
+package util.`순열과 조합`
 
 import java.math.BigInteger
 
