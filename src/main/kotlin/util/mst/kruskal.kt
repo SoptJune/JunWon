@@ -1,4 +1,4 @@
-package init.mst
+package util.mst
 
 private val parents = IntArray(1001) { -1 } // Node의 개수로 초기화
 
