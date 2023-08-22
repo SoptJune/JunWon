@@ -1,4 +1,4 @@
-package baekjun.graph.`dfs-bfs`
+package baekjun.graph.dfs_bfs
 
 import java.util.*
 
