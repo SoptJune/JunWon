@@ -8,7 +8,7 @@ private val br = BufferedReader(InputStreamReader(System.`in`))
 private val bw = BufferedWriter(OutputStreamWriter(System.out))
 private var ans = 0
 private lateinit var scoresTotal: MutableList<List<Int>>
-val visited = BooleanArray(9)
+private val visited = BooleanArray(9)
 fun main() {
     val n = br.readLine().toInt()
     scoresTotal = mutableListOf<List<Int>>().apply {
