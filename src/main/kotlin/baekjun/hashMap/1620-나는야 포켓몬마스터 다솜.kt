@@ -1,4 +1,4 @@
-package baekjun.map
+package baekjun.hashMap
 // https://www.acmicpc.net/status?user_id=sis04013&problem_id=1620&from_mine=1
 
 private val br = System.`in`.bufferedReader()

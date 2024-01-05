@@ -5,8 +5,8 @@ import java.io.BufferedWriter
 import java.io.InputStreamReader
 import java.io.OutputStreamWriter
 
-val br = BufferedReader(InputStreamReader(System.`in`))
-val bw = BufferedWriter(OutputStreamWriter(System.out))
+private val br = BufferedReader(InputStreamReader(System.`in`))
+private val bw = BufferedWriter(OutputStreamWriter(System.out))
 fun main() {
     val cnt = br.readLine().toInt()
     val arr = ArrayList<String>()
